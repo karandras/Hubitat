@@ -1001,9 +1001,9 @@ def updateDevices() {
 	log.info("Deleting ${it.deviceNetworkId}")
     try {
 			deleteChildDevice(it.deviceNetworkId)
-    } catch (physicalgraph.exception.NotFoundException e) {
+    } catch (hubitat.exception.NotFoundException e) {
     	log.info("Could not find ${it.deviceNetworkId}. Assuming manually deleted.")
-    } catch (physicalgraph.exception.ConflictException ce) {
+    } catch (hubitat.exception.ConflictException ce) {
     	log.info("Device ${it.deviceNetworkId} in use. Please manually delete.")
     }
 	}
